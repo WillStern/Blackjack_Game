@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="299.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StartMenuController">
+   <children>
+      <AnchorPane prefHeight="298.0" prefWidth="485.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fitHeight="299.0" fitWidth="485.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/table.jpg" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.32" />
+               </effect></ImageView>
+            <Button fx:id="startGameButton" layoutX="181.0" layoutY="243.0" mnemonicParsing="false" onAction="#openBlackjackWindow" prefHeight="23.0" prefWidth="123.0" text="Start Game " />
+            <Button fx:id="playerAnalytiicsButton" layoutX="327.0" layoutY="243.0" mnemonicParsing="false" onAction="#showAnalytics" prefHeight="23.0" prefWidth="123.0" text="Player Analytics " />
+            <Button fx:id="switchPlayerButton" layoutX="31.0" layoutY="243.0" mnemonicParsing="false" onAction="#nextPlayer" prefHeight="23.0" prefWidth="123.0" text="Switch Player " />
+            <Label alignment="TOP_LEFT" layoutX="151.0" layoutY="32.0" prefHeight="21.0" prefWidth="183.0" text="Welcome To BlackJack " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="numberOfDecks_slider" blockIncrement="1.0" layoutX="29.0" layoutY="167.0" majorTickUnit="1.0" max="6.0" min="1.0" minorTickCount="0" prefHeight="38.0" prefWidth="123.0" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+               <tooltip>
+                  <Tooltip text="Sets number of decks used during the game." />
+               </tooltip>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </Slider>
+            <Text fill="WHITE" layoutX="39.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Decks" />
+            <ChoiceBox fx:id="difficulty_choiceBox" layoutX="316.0" layoutY="167.0" prefHeight="26.0" prefWidth="140.0" />
+            <Text fill="WHITE" layoutX="361.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" />
+            <RadioButton fx:id="cardCounter_button" layoutX="188.0" layoutY="152.0" mnemonicParsing="false" text="Card Counter" textFill="WHITE">
+               <tooltip>
+                  <Tooltip text="If on, displays the current count." />
+               </tooltip>
+            </RadioButton>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/close_icon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <Button layoutX="-1.0" mnemonicParsing="false" onAction="#close" opacity="0.0" text="X" textAlignment="CENTER" textFill="#9a9a9a" />
+            <Text fx:id="nameTextField" fill="#f8f5f5" layoutX="219.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="52.68862342834473" />
+            <Text fx:id="chipsTextField" fill="WHITE" layoutX="334.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="ratioTextField" fill="#fcfbfb" layoutX="109.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Label layoutX="81.0" layoutY="61.0" text="Win Ratio" textFill="#faf8f8" />
+            <Label layoutX="216.0" layoutY="61.0" text="Player Name" textFill="#fcf8f8" />
+            <Label layoutX="331.0" layoutY="61.0" text="Chips" textFill="#f6f5f5" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
